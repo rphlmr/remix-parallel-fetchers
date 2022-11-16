@@ -23,7 +23,7 @@ function ComponentThatFetch({ id }: { id: string }) {
   const { load, data } = useFetcher<ResourceLoaderData>();
 
   useEffect(() => {
-    return () => load(`/resources/${id}`);
+    load(`/resources/${id}`);
   }, [id, load]);
 
   return !data ? <span>loading {id}</span> : <span>{data.title}</span>;

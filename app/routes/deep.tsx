@@ -34,7 +34,7 @@ function ComponentThatFetch({ id, subId }: { id: string; subId: string }) {
   const { load, data } = useFetcher<DeepResourceLoaderData>();
 
   useEffect(() => {
-    return () => load(`/resources/${id}/subs/${subId}`);
+    load(`/resources/${id}/subs/${subId}`);
   }, [id, subId, load]);
 
   return !data ? (
